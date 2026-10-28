@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>WEDE5020 ICE Task 3</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+        h1 {
+            text-align: center;
+            color: #245c38;
+        }
+
+        h2 {
+            color: #245c38;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            width: 200px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #245c38;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #39814e;
+        }
+
+        .result {
+            color: #245c38;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        hr {
+            margin: 30px 0;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>WEDE5020 ICE Task 3</h1>
+
+    <!-- QUESTION 1 -->
+    <h2>Question 1: My JavaScript Experience</h2>
+
+    <p id="experience">
+        What is my experience?
+    </p>
+
+    <button onclick="showExperience()">
+        Answer
+    </button>
+
+    <br><br>
+    <hr>
+
+    <!-- QUESTION 2 -->
+    <h2>Question 2: Double a Number</h2>
+
+    <label for="numberInput">
+        Enter a number:
+    </label>
+
+    <br>
+
+    <input
+            type="number"
+            id="numberInput"
+            placeholder="Enter a number">
+
+    <br>
+
+    <button onclick="doubleNumber()">
+        Calculate Double
+    </button>
+
+    <p id="doubleResult" class="result"></p>
+
+    <br>
+    <hr>
+
+    <!-- QUESTION 3 -->
+    <h2>Question 3: Calculate Average</h2>
+
+    <label for="firstNumber">
+        Enter the first number:
+    </label>
+
+    <br>
+
+    <input
+            type="number"
+            id="firstNumber"
+            placeholder="First number">
+
+    <br><br>
+
+    <label for="secondNumber">
+        Enter the second number:
+    </label>
+
+    <br>
+
+    <input
+            type="number"
+            id="secondNumber"
+            placeholder="Second number">
+
+    <br>
+
+    <button onclick="calculateAverage()">
+        Calculate Average
+    </button>
+
+    <p id="averageResult" class="result"></p>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // QUESTION 1
+    function showExperience() {
+
+        document.getElementById("experience").textContent =
+            "This is my first JavaScript code";
+
+    }
+
+    // QUESTION 2
+    function doubleNumber() {
+
+        let input =
+            document.getElementById("numberInput").value;
+
+        if (input === "") {
+            document.getElementById("doubleResult").textContent =
+                "Please enter a number.";
+            return;
+        }
+
+        let number = Number(input);
+
+        let result = number * 2;
+
+        document.getElementById("doubleResult").textContent =
+            "Double of " + number + " is " + result;
+
+    }
+
+    // QUESTION 3
+    function calculateAverage() {
+
+        let input1 =
+            document.getElementById("firstNumber").value;
+
+        let input2 =
+            document.getElementById("secondNumber").value;
+
+        if (input1 === "" || input2 === "") {
+            document.getElementById("averageResult").textContent =
+                "Please enter both numbers.";
+            return;
+        }
+
+        let number1 = Number(input1);
+        let number2 = Number(input2);
+
+        let average = (number1 + number2) / 2;
+
+        document.getElementById("averageResult").textContent =
+            "The average is: " + average;
+
+    }
+
+</script>
+
+</body>
+</html>
